@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>to my bff premium</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="decorative-bg"></div>
+
+    <!-- Navigation arrows -->
+    <button class="nav-arrow left" id="prevBtn" aria-label="Previous message">&lt;</button>
+    <button class="nav-arrow right" id="nextBtn" aria-label="Next message">&gt;</button>
+
+    <!-- Main content -->
+    <div class="container">
+        <div class="content">
+            <!-- Message display -->
+            <div class="message-container center-stage">
+                <div class="message-display fade-in" id="messageDisplay">
+                    <p class="message-text" id="messageText"></p>
+                    <p class="message-subtext" id="messageSubtext"></p>
+                </div>
+            </div>
+
+            <div class="controls-bottom">
+                <!-- Progress indicator -->
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+
+                <!-- Counter -->
+                <div class="counter" id="counter"></div>
+
+                <!-- Bottom message -->
+                <div class="bottom-message" id="bottomMessage"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
