@@ -58,7 +58,12 @@ const messages = [
 	{
 		text: 'Until then,',
 		subtext: 'I give you my love, my time, and my whole heart.'
-	}
+	},
+	{
+		image: 'image/code.jpg',
+		imageAlt: 'paper flowers',
+		}
+
 ];
 
 let currentIndex = 0;
@@ -78,7 +83,17 @@ function updateDisplay() {
 	const progress = ((currentIndex + 1) / messages.length) * 100;
 
 	messageText.textContent = currentMessage.text;
-	messageSubtext.textContent = currentMessage.subtext;
+	// Render an image if present; otherwise show the subtext
+	messageSubtext.innerHTML = '';
+	if (currentMessage.image) {
+		const img = document.createElement('img');
+		img.src = currentMessage.image;
+		img.alt = currentMessage.imageAlt || '';
+		img.className = 'message-image';
+		messageSubtext.appendChild(img);
+	} else {
+		messageSubtext.textContent = currentMessage.subtext;
+	}
 	progressFill.style.width = progress + '%';
 	counter.textContent = (currentIndex + 1) + ' / ' + messages.length;
 
